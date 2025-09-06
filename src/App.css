@@ -1,0 +1,135 @@
+/* 🌍 Base Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #f5f7fa);
+  color: #333;
+}
+
+.dashboard {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* 🌟 Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #4cafef, #2a9d8f);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  color: white;
+}
+.header h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* 🔔 Notification */
+.notification-icon {
+  position: relative;
+}
+.icon {
+  width: 32px; height: 32px; color: white;
+  cursor: pointer; transition: transform 0.2s;
+}
+.icon:hover { transform: scale(1.1); }
+.badge {
+  position: absolute; top: -6px; right: -12px;
+  background: #ff1744; color: white; font-size: 12px;
+  padding: 3px 7px; border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 🟩 Sensor Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.card {
+  background: white; padding: 20px; border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center; transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+.card-title { font-size: 15px; font-weight: 600; color: #777; }
+.card-value { font-size: 24px; font-weight: bold; margin-top: 8px; color: #2a9d8f; }
+
+/* 📊 Chart Section */
+.chart-section {
+  margin-top: 30px; background: white; padding: 20px;
+  border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.chart-section h2 { margin-bottom: 15px; font-size: 20px; font-weight: bold; color: #444; }
+
+/* 🔔 Notifications */
+.notifications {
+  margin-top: 30px; background: white; padding: 20px;
+  border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.notifications h2 { font-size: 20px; margin-bottom: 12px; font-weight: bold; color: #444; }
+.notification {
+  background: #fff3cd; border-left: 6px solid #ffca2c;
+  padding: 12px; margin: 6px 0; border-radius: 8px; transition: transform 0.2s;
+}
+.notification:hover { transform: scale(1.02); }
+.empty { color: #999; font-style: italic; text-align: center; }
+
+/* 🌤️ Weather Banner (top card) */
+.weather-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white; padding: 20px 25px; border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  margin-bottom: 25px; cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.weather-banner:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+.weather-banner-left { display: flex; align-items: center; gap: 15px; }
+.weather-banner img { width: 70px; height: 70px; }
+.weather-banner h1 { margin: 0; font-size: 40px; font-weight: bold; }
+.weather-banner p { margin: 0; font-size: 16px; opacity: 0.9; }
+
+/* 🌈 Weather Popup */
+.weather-popup {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.popup-content {
+  background: linear-gradient(135deg, #fdfbfb, #f5f7fa);
+  padding: 30px 25px; border-radius: 18px; text-align: center;
+  max-width: 380px; width: 90%; box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: popup-fade 0.3s ease;
+}
+.popup-content h2 { margin: 0; font-size: 22px; color: #444; }
+.popup-content h1 { margin: 12px 0; font-size: 46px; color: #2a9d8f; }
+.popup-content p { margin: 6px 0 18px; font-size: 18px; color: #555; }
+.popup-content ul { list-style: none; padding: 0; margin: 0; }
+.popup-content li {
+  margin: 8px 0; font-size: 16px; padding: 8px;
+  background: #f7f9fc; border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+}
+.close-btn {
+  background: transparent; border: none; font-size: 22px; float: right;
+  cursor: pointer; color: #555; transition: color 0.2s;
+}
+.close-btn:hover { color: #e53935; }
+@keyframes popup-fade { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* 🌐 Language Selector */
+.header-right { display: flex; align-items: center; gap: 15px; }
+.lang-select {
+  padding: 6px 12px; border-radius: 8px; border: 1px solid #ddd;
+  font-size: 14px; cursor: pointer; background: white;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.lang-select:hover { border: 1px solid #2a9d8f; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
